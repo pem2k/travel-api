@@ -2,11 +2,11 @@ const { Model, DataTypes } = require('sequelize');
 
 const sequelize = require('../config/connection.js');
 
-class Trip extends Model {}
+class Trip extends Model { }
 
 Trip.init(
     {
-        trip_budget:{
+        trip_budget: {
             type: DataTypes.FLOAT,
         },
         traveller_amt: {
@@ -20,7 +20,7 @@ Trip.init(
         freezeTableName: true,
         underscored: true,
         modelName: 'trip',
-      }
+    }
 )
 
 module.exports = Trip
