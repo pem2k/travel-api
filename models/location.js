@@ -6,10 +6,6 @@ class Location extends Model {}
 
 Location.init(
     {
-        id:{
-            type: DataTypes.INTEGER,
-          },
-
         location_name:{
             type: DataTypes.STRING
         }
