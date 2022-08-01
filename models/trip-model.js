@@ -23,4 +23,4 @@ Trip.init(
     }
 )
 
-module.exports = Trip
+module.exports = Trip;

@@ -1,12 +1,12 @@
 const router = require('express').Router();
 const sequelize = require('../../config/connection');
-const { traveller, location, trip } = require('../../models');
+const { Traveller, Location, Trip } = require('../../models');
 
 // GET all trips
 router.get('/', async (req, res) => {
     try {
       const tripData = await trip.findAll({
-        include: [{ model: traveller-model }, { model: location }, { model: trip }],
+        include: [{ model: Traveller }, { model: Location }, { model: Trip }],
         attributes: {
           include: [
             [
@@ -27,7 +27,7 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
     try {
       const tripData = await trip.findByPk(req.params.id, {
-        include: [{ model: traveller-model }, { model: location }, { model: trip }],
+        include: [{ model: Traveller-model }, { model: Location }, { model: trip }],
         attributes: {
           include: [
             [
