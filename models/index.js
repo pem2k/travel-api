@@ -1,6 +1,6 @@
-const Trip = require("./trip")
-const Traveller = require("./traveller")
-const Location = require("./locations")
+const Trip = require("./trip-model")
+const Traveller = require("./traveller-model")
+const Location = require("./location-model")
 
 Location.hasMany(Trip)
 Traveller.hasMany(Trip)
