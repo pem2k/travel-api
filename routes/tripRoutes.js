@@ -1,6 +1,6 @@
 const router = require('express').Router();
-const sequelize = require('../../config/connection');
-const { Traveller, Location, Trip } = require('../../models');
+const sequelize = require('../config/connection');
+const { Traveller, Location, Trip } = require('../models');
 
 // GET all trips
 router.get('/', async (req, res) => {

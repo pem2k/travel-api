@@ -1,12 +1,12 @@
 const router = require('express').Router();
-const sequelize = require('../../config/connection');
-const { traveller, location, trip } = require('../../models');
+const sequelize = require('../config/connection');
+const { Traveller,Location, Trip } = require('../models');
 
 // GET all travellers
 router.get('/', async (req, res) => {
     try {
       const travellerData = await Traveller.findAll({
-        include: [{ model: traveller-model }, { model: location }, { model: trip }],
+        include: [{ model: Traveller }, { model: Location }, { model: Trip }],
         attributes: {
           include: [
             [
@@ -26,8 +26,8 @@ router.get('/', async (req, res) => {
 // GET a single traveller
 router.get('/:id', async (req, res) => {
     try {
-      const travellerData = await traveller.findByPk(req.params.id, {
-        include: [{ model: traveller-model }, { model: location }, { model: trip }],
+      const travellerData = await Traveller.findByPk(req.params.id, {
+        include: [{ model: Traveller }, { model: Location }, { model: Trip }],
         attributes: {
           include: [
             [
@@ -53,7 +53,7 @@ router.get('/:id', async (req, res) => {
 // CREATE a traveller
 router.post('/', async (req, res) => {
     try {
-      const travellerData = await traveller.create(req.body);
+      const travellerData = await Traveller.create(req.body);
       res.status(200).json(travellerData);
     } catch (err) {
       res.status(400).json(err);
@@ -63,7 +63,7 @@ router.post('/', async (req, res) => {
 // DELETE a traveller
 router.delete('/:id', async (req, res) => {
     try {
-      const travellerData = await traveller.destroy({
+      const travellerData = await Traveller.destroy({
         where: {
           id: req.params.id,
         },
