@@ -6,10 +6,6 @@ class Trip extends Model {}
 
 Trip.init(
     {
-        id:{
-          type: DataTypes.INTEGER,
-        },
-
         trip_budget:{
             type: DataTypes.FLOAT,
         },
